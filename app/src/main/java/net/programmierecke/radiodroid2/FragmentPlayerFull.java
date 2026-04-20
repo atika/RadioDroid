@@ -576,10 +576,10 @@ public class FragmentPlayerFull extends Fragment {
                 // TODO: Check if we already have this station's icon loaded into image view
                 Picasso.get()
                         .load(station.IconUrl)
-                        .error(R.drawable.ic_launcher)
+                        .error(R.drawable.player_fallback_image)
                         .into(artAndInfoPagerAdapter.imageViewArt);
             } else {
-                artAndInfoPagerAdapter.imageViewArt.setImageResource(R.drawable.ic_launcher);
+                artAndInfoPagerAdapter.imageViewArt.setImageResource(R.drawable.player_fallback_image);
             }
             return;
         }
@@ -666,7 +666,7 @@ public class FragmentPlayerFull extends Fragment {
                     if (station != null && station.hasIcon()) {
                         Picasso.get()
                                 .load(station.IconUrl)
-                                .error(R.drawable.ic_launcher)
+                                .error(R.drawable.player_fallback_image)
                                 .into(fragment.artAndInfoPagerAdapter.imageViewArt);
                     } else {
                         fragment.artAndInfoPagerAdapter.imageViewArt.setImageResource(R.drawable.ic_launcher);
