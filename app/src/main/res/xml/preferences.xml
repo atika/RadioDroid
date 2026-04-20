@@ -10,19 +10,26 @@
         search:ignore="true"
         android:key="pref_category_ui">
 
-        <ListPreference
-            android:defaultValue="@string/theme_light"
-            android:entries="@array/theme_entries"
-            android:entryValues="@array/theme_values"
-            android:key="theme_name"
-            android:title="@string/settings_theme_selection_title"
-            search:summary=""
-            android:summary="%s"/>
+      <ListPreference
+          android:defaultValue="@string/theme_dark"
+          android:entries="@array/theme_entries"
+          android:entryValues="@array/theme_values"
+          android:key="theme_name"
+          android:summary="%s"
+          android:title="@string/settings_theme_selection_title"
+          search:summary="" />
 
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="circular_icons"
-            android:title="@string/settings_circular_icons" />
+      <CheckBoxPreference
+          android:defaultValue="true"
+          android:key="circular_icons"
+          android:title="@string/settings_circular_icons" />
+
+      <ListPreference android:title="Icon Size"
+          android:key="station_icon_only_size"
+          android:entries="@array/station_icon_only_size_entries"
+          android:entryValues="@array/station_icon_only_size_values"
+          android:defaultValue="120"
+          android:summary="Only station icon size" />
 
         <CheckBoxPreference
             android:defaultValue="false"
@@ -43,13 +50,13 @@
         android:key="pref_category_startup">
 
         <ListPreference
-            android:defaultValue="@string/startup_show_history"
+            android:defaultValue="@string/startup_show_favorites"
             android:entries="@array/startup_action_entries"
             android:entryValues="@array/startup_action_entryvalues"
             android:key="startup_action"
             android:summary="@string/startup_action_title_desc"
-            search:summary=""
-            android:title="@string/startup_action_title" />
+            android:title="@string/startup_action_title"
+            search:summary="" />
 
         <CheckBoxPreference
             android:defaultValue="false"
@@ -90,7 +97,7 @@
             android:title="@string/settings_load_icons" />
 
         <CheckBoxPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:dependency="load_icons"
             android:key="icon_click_toggles_favorite"
             android:summaryOff="@string/settings_icon_click_toggles_favorite_off"

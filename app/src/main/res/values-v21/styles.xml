@@ -52,6 +52,9 @@
         <item name="colorAccentMy">@color/colorAccent</item>
 
         <item name="viewInflaterClass">androidx.appcompat.app.AppCompatViewInflater</item>
+
+        <item name="android:actionButtonStyle">@style/myActionButtonStyle</item>
+        <item name="actionButtonStyle">@style/myActionButtonStyle</item>
     </style>
 
     <style name="MyMaterialTheme.Base.Dark" parent="Theme.MaterialComponents">
@@ -99,5 +102,15 @@
         <item name="colorAccentMy">@color/colorAccentDark</item>
 
         <item name="viewInflaterClass">androidx.appcompat.app.AppCompatViewInflater</item>
+
+        <item name="android:actionButtonStyle">@style/myActionButtonStyle</item>
+        <item name="actionButtonStyle">@style/myActionButtonStyle</item>
+    </style>
+
+    <style name="myActionButtonStyle" parent="Widget.AppCompat.ActionButton">
+        <item name="android:minWidth">24dip</item>
+        <item name="android:maxWidth">56dip</item>
+        <item name="android:width">56dip</item>
+        <item name="android:spacing">20dip</item>
     </style>
 </resources>

@@ -38,6 +38,19 @@
         <item>@string/startup_show_last_view</item>
     </string-array>
 
+    <string-array name="station_icon_only_size_entries">
+        <item>S</item>
+        <item>M</item>
+        <item>L</item>
+        <item>XL</item>
+    </string-array>
+    <string-array name="station_icon_only_size_values">
+        <item>90</item>
+        <item>120</item>
+        <item>180</item>
+        <item>213</item>
+    </string-array>
+
     <string-array name="theme_entries">
         <item>@string/theme_light</item>
         <item>@string/theme_dark</item>
