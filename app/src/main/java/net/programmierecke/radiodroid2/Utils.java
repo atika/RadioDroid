@@ -406,7 +406,7 @@ public class Utils {
 
     public static String getTheme(final Context context) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPref.getString("theme_name", context.getResources().getString(R.string.theme_light));
+        return sharedPref.getString("theme_name", context.getResources().getString(R.string.theme_dark));
     }
 
     public static int getThemeResId(final Context context) {

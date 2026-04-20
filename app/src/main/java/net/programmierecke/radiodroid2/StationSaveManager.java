@@ -529,7 +529,7 @@ public class StationSaveManager extends Observable {
             final RadioDroidApp radioDroidApp = (RadioDroidApp) context.getApplicationContext();
             final OkHttpClient httpClient = radioDroidApp.getHttpClient();
             ArrayList<String> listUuids = new ArrayList<String>();
-            ArraySet<DataRadioStation> loadedItems = null;
+//            ArraySet<DataRadioStation>loadedItems = null;
 
             BufferedReader br = new BufferedReader(reader);
             while ((line = br.readLine()) != null) {
@@ -540,7 +540,8 @@ public class StationSaveManager extends Observable {
                         DataRadioStation station = Utils.getStationByUuid(httpClient, context, uuid);
                         if (station != null) {
                             station.queue = this;
-                            loadedItems.add(station);
+//                            loadedItems.add(station);
+                            listUuids.add(uuid);
                         }
                     } catch (Exception e) {
                         Log.e("LOAD", e.toString());
