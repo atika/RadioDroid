@@ -110,6 +110,8 @@ public class ItemAdapterStation
 
         ImageView imageViewIcon;
         ImageView transparentImageView;
+
+        ImageView actifCircleImageView;
         ImageView starredStatusIcon;
         TextView textViewTitle;
         TextView textViewShortDescription;
@@ -137,6 +139,7 @@ public class ItemAdapterStation
             imageViewIcon = itemView.findViewById(R.id.imageViewIcon);
             imageTrend = itemView.findViewById(R.id.trendStatusIcon);
             transparentImageView = itemView.findViewById(R.id.transparentCircle);
+            actifCircleImageView = itemView.findViewById(R.id.iconTransparentActifCircle);
             starredStatusIcon = itemView.findViewById(R.id.starredStatusIcon);
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
             textViewShortDescription = itemView.findViewById(R.id.textViewShortDescription);
@@ -518,7 +521,7 @@ public class ItemAdapterStation
     void setupIcon(boolean useCircularIcons, ImageView imageView, ImageView transparentImageView) {
         if (useCircularIcons) {
             transparentImageView.setVisibility(View.VISIBLE);
-            imageView.getLayoutParams().height = imageView.getLayoutParams().height = imageView.getLayoutParams().width;
+            imageView.getLayoutParams().height = imageView.getLayoutParams().width;
             imageView.setBackgroundColor(getContext().getResources().getColor(android.R.color.black));
         }
     }

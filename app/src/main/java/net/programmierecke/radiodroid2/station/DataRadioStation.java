@@ -31,6 +31,7 @@ import org.json.JSONObject;
 
 import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 import jp.wasabeef.picasso.transformations.CropSquareTransformation;
+import jp.wasabeef.picasso.transformations.CropTransformation;
 import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
 import okhttp3.OkHttpClient;
 
@@ -418,12 +419,14 @@ public class DataRadioStation implements Parcelable {
 
     public void prepareShortcut(Context ctx, ShortcutReadyListener cb) {
         Picasso.get()
-                .load((!hasIcon() ? resourceToUri(ctx.getResources(), R.drawable.ic_launcher).toString() : IconUrl))
-                .error(R.drawable.ic_launcher)
-                .transform(Utils.useCircularIcons(ctx) ? new CropCircleTransformation() : new CropSquareTransformation())
-                .transform(new RoundedCornersTransformation(12, 2, RoundedCornersTransformation.CornerType.ALL))
+                .load((!hasIcon() ? resourceToUri(ctx.getResources(), R.drawable.player_fallback_image).toString() : IconUrl))
+                .error(R.drawable.player_fallback_image)
+				.resize(256,256)
+				.centerInside()
+				.transform(new CropTransformation(256, 256))
+				.transform(new RoundedCornersTransformation(40, 1, RoundedCornersTransformation.CornerType.ALL))
                 .into(new RadioIconTarget(ctx, this, cb));
-    }
+	}
 
     class RadioIconTarget implements Target {
         DataRadioStation station;

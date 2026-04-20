@@ -32,6 +32,8 @@ import net.programmierecke.radiodroid2.R;
 import java.text.DateFormat;
 import java.util.Objects;
 
+import jp.wasabeef.picasso.transformations.CropTransformation;
+
 public class TrackHistoryInfoDialog extends BottomSheetDialogFragment {
 
     public static final String FRAGMENT_TAG = "tracks_history_info_dialog_fragment";
@@ -56,11 +58,13 @@ public class TrackHistoryInfoDialog extends BottomSheetDialogFragment {
         AppCompatButton btnCopyInfo = view.findViewById(R.id.btnCopyTrackInfo);
 
         Resources resource = requireContext().getResources();
-        final float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 200, resource.getDisplayMetrics());
+        final float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 256, resource.getDisplayMetrics());
         Picasso.get()
                 .load(historyEntry.artUrl)
                 .placeholder(AppCompatResources.getDrawable(getContext(), R.drawable.ic_photo_24dp))
-                .resize((int) px, 0)
+                .resize((int) px, (int) px)
+                .centerInside()
+                .transform(new CropTransformation((int) px, (int) px))
                 .into(imageViewTrackArt);
 
         // TODO: Icons for date and duration

@@ -76,6 +76,9 @@ import net.programmierecke.radiodroid2.recording.RunningRecordingInfo;
 
 import static android.content.Intent.ACTION_MEDIA_BUTTON;
 
+import jp.wasabeef.picasso.transformations.CropTransformation;
+import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
+
 public class PlayerService extends JobIntentService implements RadioPlayer.PlayerListener {
     protected static final int NOTIFY_ID = 1;
     private static final String NOTIFICATION_CHANNEL_ID = "default";
@@ -1043,21 +1046,25 @@ public class PlayerService extends JobIntentService implements RadioPlayer.Playe
     }
 
     private void downloadRadioIcon() {
-        final float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 70, getResources().getDisplayMetrics());
+        final float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 128, getResources().getDisplayMetrics());
 
         if (!currentStation.hasIcon()) {
-            radioIcon = (BitmapDrawable) ResourcesCompat.getDrawable(getResources(), R.drawable.ic_launcher, null);
+            radioIcon = (BitmapDrawable) ResourcesCompat.getDrawable(getResources(), R.drawable.player_fallback_image, null);
             updateNotification();
             return;
         }
 
         Picasso.get()
                 .load(currentStation.IconUrl)
-                .resize((int) px, 0)
+                .resize((int) px, (int) px)
+                .centerInside()
+                .transform(new CropTransformation((int) px, (int) px))
                 .into(new Target() {
                     @Override
                     public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                        final boolean useCircularIcons = Utils.useCircularIcons(itsContext);
+                        //final boolean useCircularIcons = Utils.useCircularIcons(itsContext);
+                        radioIcon = new BitmapDrawable(getResources(), bitmap);
+                        /*
                         if (!useCircularIcons)
                             radioIcon = new BitmapDrawable(getResources(), bitmap);
                         else {
@@ -1066,6 +1073,7 @@ public class PlayerService extends JobIntentService implements RadioPlayer.Playe
                             rb.setCircular(true);
                             radioIcon = new BitmapDrawable(getResources(), rb.getBitmap());
                         }
+                        */
                         updateNotification();
                     }
 

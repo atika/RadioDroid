@@ -1,6 +1,7 @@
 package net.programmierecke.radiodroid2.station;
 
 import android.content.SharedPreferences;
+import android.opengl.Visibility;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.ContextMenu;
@@ -86,13 +87,36 @@ public class ItemAdapterIconOnlyStation extends ItemAdapaterContextMenuStation i
             holder.imageViewIcon.setImageDrawable(stationImagePlaceholder);
         }
 
+        // Resize Station Icon
+        float icon_size;
+        try {
+            icon_size = Float.parseFloat(prefs.getString("station_icon_only_size", "120"));
+        } catch(Exception e) {
+            icon_size=120;
+        }
+        icon_size = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, icon_size, getContext().getResources().getDisplayMetrics());
+        int padding = (int) icon_size * 8 / 100;
+
+        ViewGroup.LayoutParams frameLayoutParams = holder.frameLayout.getLayoutParams();
+        frameLayoutParams.width = (int) icon_size;
+        frameLayoutParams.height = (int) icon_size;
+        holder.frameLayout.setPadding(padding, padding, padding, padding);
+        holder.frameLayout.setLayoutParams(frameLayoutParams);
+
         TypedValue tv = new TypedValue();
+
         if (playingStationPosition == position) {
             getContext().getTheme().resolveAttribute(R.attr.colorAccentMy, tv, true);
-            holder.frameLayout.setBackgroundColor(tv.data);
-            holder.transparentImageView.setColorFilter(tv.data);
+            if (useCircularIcons) {
+                holder.actifCircleImageView.setVisibility(View.VISIBLE);
+                holder.actifCircleImageView.setColorFilter(tv.data);
+            } else {
+                holder.actifCircleImageView.setVisibility(View.GONE);
+                holder.frameLayout.setBackgroundColor(tv.data);
+            }
         } else {
-            getContext().getTheme().resolveAttribute(R.attr.boxBackgroundColor, tv, true);
+            getContext().getTheme().resolveAttribute(R.attr.colorPlayerBackground, tv, true);
+            holder.actifCircleImageView.setVisibility(View.GONE);
             holder.frameLayout.setBackgroundColor(tv.data);
         }
     }

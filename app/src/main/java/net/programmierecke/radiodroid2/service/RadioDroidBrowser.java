@@ -43,6 +43,7 @@ import java.util.concurrent.TimeUnit;
 
 import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 import jp.wasabeef.picasso.transformations.CropSquareTransformation;
+import jp.wasabeef.picasso.transformations.CropTransformation;
 import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
 
 import static net.programmierecke.radiodroid2.Utils.resourceToUri;
@@ -112,12 +113,11 @@ public class RadioDroidBrowser {
                 };
                 imageLoadTargets.add(imageLoadTarget);
 
-                Picasso.get().load((!station.hasIcon() ? resourceToUri(resources, R.drawable.ic_launcher).toString() : station.IconUrl))
-                        .transform(new CropSquareTransformation())
-                        .error(R.drawable.ic_launcher)
-                        .transform(Utils.useCircularIcons(context) ? new CropCircleTransformation() : new CropSquareTransformation())
-                        .transform(new RoundedCornersTransformation(12, 2, RoundedCornersTransformation.CornerType.ALL))
-                        .resize(128, 128)
+                Picasso.get().load((!station.hasIcon() ? resourceToUri(resources, R.drawable.player_fallback_image).toString() : station.IconUrl))
+                        .error(R.drawable.player_fallback_image)
+                        .resize(256,256)
+                        .centerInside()
+                        .transform(new CropTransformation(256, 256))
                         .into(imageLoadTarget);
             }
 

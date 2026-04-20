@@ -32,6 +32,9 @@ import net.programmierecke.radiodroid2.station.live.StreamLiveInfo;
 
 import java.util.Objects;
 
+import jp.wasabeef.picasso.transformations.CropTransformation;
+import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
+
 public class PlayerServiceUtil {
 
     private static Context mainContext = null;
@@ -280,7 +283,7 @@ public class PlayerServiceUtil {
 
         if (fromUrl.trim().equals("")) return;
         Resources r = mainContext.getResources();
-        final float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 70, r.getDisplayMetrics());
+        final float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 256, r.getDisplayMetrics());
         final Drawable stationImagePlaceholder = AppCompatResources.getDrawable(holder.getContext(), R.drawable.ic_photo_24dp);
 
         Callback imageLoadCallback = new Callback() {
@@ -302,7 +305,9 @@ public class PlayerServiceUtil {
         Picasso.get()
                 .load(fromUrl)
                 .placeholder(stationImagePlaceholder)
-                .resize((int) px, 0)
+                .resize((int) px, (int) px)
+                .centerInside()
+                .transform(new CropTransformation((int) px, (int) px))
                 .networkPolicy(NetworkPolicy.OFFLINE)
                 .into(holder, imageLoadCallback);
     }
