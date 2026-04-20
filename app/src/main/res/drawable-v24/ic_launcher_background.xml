@@ -13,14 +13,15 @@
         android:strokeColor="#00000000">
       <aapt:attr name="android:fillColor">
         <gradient 
-            android:startY="90.2935"
-            android:startX="5.935388E-6"
-            android:endY="0.11010334"
-            android:endX="90.57859"
+            android:startY="0"
+            android:startX="30"
+            android:endY="100"
+            android:endX="60"
             android:type="linear"
             android:tileMode="clamp">
-          <item android:offset="0" android:color="#FF48A1D5"/>
-          <item android:offset="1" android:color="#FF30478C"/>
+          <item android:offset="0" android:color="#5A7FE0"/>
+          <item android:offset="0.45" android:color="#0D0D57"/>
+          <item android:offset="1" android:color="#582099"/>
         </gradient>
       </aapt:attr>
     </path>

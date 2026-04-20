@@ -4,29 +4,19 @@
     android:viewportWidth="108"
     android:viewportHeight="108"
     android:name="vector">
-  <group android:scaleX="0.7885714"
-      android:scaleY="0.7885714"
-      android:translateX="23.64"
-      android:translateY="29.16">
+  <group android:scaleX="0.7"
+      android:scaleY="0.7"
+      android:translateX="27"
+      android:translateY="32">
       <group android:name="wrapper">
           <clip-path
               android:name="clippath602"
               android:pathData="M -42.604 -676.497 L 478.606 -676.497 L 478.606 880.791 L -42.604 880.791 Z"/>
           <group android:name="group">
               <path
-                  android:name="path"
-                  android:pathData="M 37.757 38.435 L 37.757 38.45 C 37.668 38.443 37.585 38.438 37.51 38.435 Z M 37.51 38.435 L 37.081 38.435 C 37.164 38.43 37.315 38.428 37.51 38.435"
-                  android:fillColor="#ffffff"
-                  android:strokeWidth="0.352778018"/>
-              <path
-                  android:name="path_1"
-                  android:pathData="M 46.41 22.491 L 46.41 22.507 C 46.305 22.499 46.206 22.493 46.119 22.491 Z M 46.119 22.491 L 45.607 22.491 C 45.706 22.486 45.885 22.482 46.119 22.491"
-                  android:fillColor="#262261"
-                  android:strokeWidth="0.352778018"/>
-              <path
                   android:name="path_2"
                   android:pathData="M 77.557 37.348 C 77.557 42.676 74.739 47.218 70.788 48.961 C 69.671 49.453 68.463 49.723 67.204 49.723 L 65.451 49.723 C 67.416 45.752 68.52 41.278 68.52 36.548 C 68.52 32.444 67.689 28.533 66.186 24.976 L 67.204 24.976 C 67.582 24.976 67.952 25 68.318 25.047 C 63.047 11.956 51.786 2.891 38.778 2.891 C 25.77 2.891 14.51 11.956 9.239 25.047 C 9.605 25 9.977 24.976 10.354 24.976 L 11.371 24.976 C 9.868 28.533 9.036 32.444 9.036 36.548 C 9.036 41.278 10.14 45.752 12.106 49.723 L 10.354 49.723 C 9.093 49.723 7.885 49.453 6.768 48.961 C 2.816 47.218 0 42.676 0 37.348 C 0 32.472 2.362 28.251 5.795 26.237 C 7.549 21.082 10.184 16.35 13.611 12.298 C 20.324 4.367 29.261 -0.001 38.778 -0.001 C 48.296 -0.001 57.235 4.367 63.945 12.298 C 67.374 16.35 70.009 21.082 71.761 26.237 L 71.761 26.238 C 75.194 28.252 77.557 32.472 77.557 37.348"
-                  android:fillColor="#ffffff"
+                  android:fillColor="#6FEAF0"
                   android:strokeWidth="0.352778018"/>
               <path
                   android:name="path_3"
