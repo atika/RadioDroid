@@ -6,15 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:translationZ="10dp"
-    app:gestureInsetBottomIgnored="true"
     app:behavior_hideable="false"
-    app:behavior_peekHeight="?android:attr/actionBarSize"
+    app:behavior_peekHeight="80dp"
+    app:gestureInsetBottomIgnored="true"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
     <FrameLayout
         android:id="@+id/fragment_player_small"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_height="80dp"
         android:tag="1" />
 
     <FrameLayout

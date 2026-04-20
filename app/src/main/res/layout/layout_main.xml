@@ -80,7 +80,7 @@
                 android:id="@+id/containerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="?android:attr/actionBarSize"
+                android:layout_marginBottom="80dp"
                 android:orientation="vertical"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
@@ -106,11 +106,15 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:background="?attr/menuBottomBackgroundColor"
+        android:minHeight="74dip"
         app:itemBackground="?attr/selectableItemBackgroundBorderless"
-        app:itemHorizontalTranslationEnabled="true"
-        app:itemIconTint="@color/menu_bottom_text_color"
+        app:itemHorizontalTranslationEnabled="false"
+        app:itemIconSize="46dip"
+        app:itemIconTint="@color/bottom_nav"
         app:itemTextColor="@color/menu_bottom_text_color"
+        app:labelVisibilityMode="unlabeled"
         app:menu="@menu/menu_bottom_navigation" />
 
 </LinearLayout>

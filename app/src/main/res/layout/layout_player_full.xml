@@ -59,16 +59,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:gravity="center_horizontal"
-                android:maxHeight="72sp"
-                android:minHeight="36sp"
-                android:textAlignment="center"
                 android:autoSizeMaxTextSize="30sp"
                 android:autoSizeMinTextSize="14sp"
                 android:autoSizeTextType="uniform"
+                android:gravity="center_horizontal"
+                android:maxHeight="68sp"
+                android:minHeight="36sp"
+                android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -240,8 +238,8 @@
 
         <ImageButton
             android:id="@+id/buttonPrev"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/description_btn_skip_to_previous"
             android:scaleType="fitXY"
@@ -254,8 +252,8 @@
 
         <ImageButton
             android:id="@+id/buttonPlay"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/detail_play"
             android:scaleType="fitXY"
@@ -268,8 +266,8 @@
 
         <ImageButton
             android:id="@+id/buttonNext"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/description_btn_skip_to_next"
             android:scaleType="fitXY"
