@@ -22,6 +22,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -86,8 +87,19 @@ public class FragmentStarred extends Fragment implements IAdapterRefreshable, Ob
             adapter = new ItemAdapterIconOnlyStation(getActivity(), R.layout.list_item_icon_only_station, StationsFilter.FilterType.LOCAL);
             Context ctx = getContext();
             DisplayMetrics displayMetrics = ctx.getResources().getDisplayMetrics();
-            int itemWidth = (int) ctx.getResources().getDimension(R.dimen.regular_style_icon_container_width);
+
+            // Resize Station Icon
+            float icon_size;
+            try {
+                icon_size = Float.parseFloat(sharedPref.getString("station_icon_only_size", "120"));
+            } catch(Exception e) {
+                icon_size = 120;
+            }
+            int itemWidth = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, icon_size, getContext().getResources().getDisplayMetrics());
             int noOfColumns = displayMetrics.widthPixels / itemWidth;
+
+            Log.i("ITEM WIDTH", "Item Width: " + itemWidth + ", Display Width: " + displayMetrics.widthPixels + " (density " + displayMetrics.density + "),  Nb of Column: " + noOfColumns);
+
             GridLayoutManager glm = new GridLayoutManager(ctx, noOfColumns);
             rvStations.setAdapter(adapter);
             rvStations.setLayoutManager(glm);
