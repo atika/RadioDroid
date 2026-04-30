@@ -10,7 +10,7 @@ This is a fork of __RadioDroid__ focused on design improvements for larger scree
 The original app displayed elements too small for comfortable use on larger displays like my Android Head Unit. This fork addresses that with bigger icons, better scaling and a cleaner interface overall for all modern Android devices.
 
 Whether you run it natively on an Android head unit or use it through __Android Auto__ from your phone, __RadioDroid__ is a great companion for your car.
-  
+
 ---
 ### Changes
 
