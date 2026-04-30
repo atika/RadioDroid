@@ -1,11 +1,9 @@
 <div align="center">
-<img src="./assets/39290477-e1bac174-4959-11e8-9229-836355a74a7d.png" alt="RadioDroid fork for Android Head Unit" />
-<img src="./assets/radiodroid_headunit.jpg" alt="RadioDroid for car and android phones" />
+<a href="https://github.com/atika/RadioDroid"><img src="./assets/39290477-e1bac174-4959-11e8-9229-836355a74a7d.png" alt="RadioDroid fork for Android Head Unit" /></a>
+<img src="./assets/radiodroid_headunit.jpg" alt="RadioDroid online radios for car and android phones" />
 </div>
 
-<div align="center">
-## Android radio streaming app based on <a href="http://www.radio-browser.info" target="_blank">Radio Browser</a>
-</div>
+## Android radio streaming app based on [Radio Browser](http://www.radio-browser.info)
 
 This is a fork of __RadioDroid__ focused on design improvements for larger screens. While it works great on any Android phone, it shines on larger displays like __Android car radios__ and head units.
 
